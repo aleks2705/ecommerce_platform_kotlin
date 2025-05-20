@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">e_commerce</string>
+    <string name="veuillez_choisir_nvotre_caf_favori">Veuillez choisir\nVotre café favori</string>
+    <string name="un_caf_qui_a_du_caract_re_ncomme_vous">Un café qui a du caractère.\nComme vous.</string>
+    <string name="d_marrer">Démarrer</string>
 </resources>
