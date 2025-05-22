@@ -3,4 +3,13 @@
     <string name="veuillez_choisir_nvotre_caf_favori">Veuillez choisir\nVotre café favori</string>
     <string name="un_caf_qui_a_du_caract_re_ncomme_vous">Un café qui a du caractère.\nComme vous.</string>
     <string name="d_marrer">Démarrer</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Mot de passe</string>
+    <string name="action_sign_in">Connexion</string>
+    <string name="action_sign_in_short">Connexion</string>
+    <string name="welcome">"Bienvenue !"</string>
+    <string name="invalid_username">Username non valide</string>
+    <string name="invalid_password">Mot de passe doit être >5 caractères</string>
+    <string name="login_failed">"Connexion échouée"</string>
 </resources>
