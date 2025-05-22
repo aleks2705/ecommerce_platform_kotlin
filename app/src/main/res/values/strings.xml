@@ -12,4 +12,5 @@
     <string name="invalid_username">Username non valide</string>
     <string name="invalid_password">Mot de passe doit être >5 caractères</string>
     <string name="login_failed">"Connexion échouée"</string>
+    <string name="rechercher_quelque_chose">Rechercher quelque chose...</string>
 </resources>
