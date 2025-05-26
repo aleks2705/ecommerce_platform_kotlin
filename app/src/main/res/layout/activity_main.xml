@@ -57,13 +57,13 @@
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/Banner"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="170dp"
                     android:scaleType="fitXY"
-                    app:shapeAppearanceOverlay="@style/CircleImageView"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/CircleImageView"
                     tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
                 <ProgressBar
@@ -102,18 +102,19 @@
                     android:layout_height="wrap_content"
                     android:indeterminateTint="@color/orange"
                     android:indeterminateTintMode="src_in"
-                    app:layout_constraintBottom_toBottomOf="@+id/recyclerViewCat"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/recyclerViewCat"
                     app:layout_constraintStart_toStartOf="@+id/recyclerViewCat"
                     app:layout_constraintTop_toTopOf="@+id/recyclerViewCat" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewCat"
-                    android:clipToPadding="false"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:minHeight="70dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -145,7 +146,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:minHeight="150dp">
 
                 <ProgressBar
                     android:id="@+id/progressBar3"
@@ -157,13 +159,14 @@
                     app:layout_constraintBottom_toBottomOf="@+id/recyclerViewPop"
                     app:layout_constraintEnd_toEndOf="@+id/recyclerViewPop"
                     app:layout_constraintStart_toStartOf="@+id/recyclerViewPop"
-                    app:layout_constraintTop_toTopOf="@+id/recyclerViewPop" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewPop"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:clipToPadding="false"
+                    android:minHeight="150dp"
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp"
                     app:layout_constraintEnd_toEndOf="parent"

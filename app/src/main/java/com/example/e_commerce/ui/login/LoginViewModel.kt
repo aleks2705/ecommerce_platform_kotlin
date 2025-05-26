@@ -1,5 +1,6 @@
 package com.example.e_commerce.ui.login
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -24,12 +25,17 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
             val result = loginRepository.login(username, password)
 
             if (result is Result.Success) {
-                _loginResult.postValue(LoginResult(success = LoggedInUserView(displayName = result.data.displayName)))
+                // Affiche le token dans Logcat
+                Log.d("LOGIN", "Token reçu = ${result.data.token}")
+                _loginResult.postValue(LoginResult(success = LoggedInUserView(displayName = "Connecté")))
             } else {
+                // Affiche l'erreur dans Logcat
+                Log.e("LOGIN", "Échec login : ${(result as? Result.Error)?.exception?.message}")
                 _loginResult.postValue(LoginResult(error = R.string.login_failed))
             }
         }
     }
+
 
     fun loginDataChanged(username: String, password: String) {
         if (!isUserNameValid(username)) {
