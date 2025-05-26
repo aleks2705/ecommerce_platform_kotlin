@@ -12,4 +12,12 @@
     <string name="invalid_username">Username non valide</string>
     <string name="invalid_password">Mot de passe doit être >5 caractères</string>
     <string name="login_failed">"Connexion échouée"</string>
+    <string name="rechercher_quelque_chose">Rechercher quelque chose...</string>
+    <string name="cat_gories">Catégories</string>
+    <string name="g_teaux_populaires">Gâteaux populaires</string>
+    <string name="g_teaux_populaire">Gâteaux populaires</string>
+    <string name="voit_tout">Voit tout</string>
+    <string name="product_title">Product title</string>
+    <string name="_99_99">99.99 €</string>
+    <string name="title">title</string>
 </resources>
