@@ -20,4 +20,6 @@
     <string name="product_title">Product title</string>
     <string name="_99_99">99.99 €</string>
     <string name="title">title</string>
+    <string name="category">Category</string>
+    <string name="produits">Produits</string>
 </resources>

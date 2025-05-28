@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lightCream"
-    tools:context=".MainActivity" >
+    tools:context=".Activity.MainActivity" >
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -93,7 +93,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:minHeight="30dp">
 
                 <ProgressBar
                     android:id="@+id/progressBar2"
@@ -112,7 +113,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:clipToPadding="false"
-                    android:minHeight="70dp"
+                    android:minHeight="30dp"
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -132,7 +133,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/g_teaux_populaire"
+                    android:text="@string/produits"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
