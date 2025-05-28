@@ -14,7 +14,7 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.e_commerce.MainActivity
+import com.example.e_commerce.Activity.MainActivity
 import com.example.e_commerce.R
 import com.example.e_commerce.databinding.ActivityLoginBinding
 

@@ -1,4 +1,4 @@
-package com.example.e_commerce
+package com.example.e_commerce.Activity
 
 import android.os.Bundle
 import android.util.Log
@@ -10,8 +10,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.e_commerce.ProductAdapter
+import com.example.e_commerce.R
+import com.example.e_commerce.models.CategoryModel
 import com.example.e_commerce.repository.MainRepository
 import com.example.e_commerce.ui.products.CategoryAdapter
 import com.google.android.material.imageview.ShapeableImageView
@@ -28,9 +32,15 @@ class MainActivity : AppCompatActivity() {
         val banner = findViewById<ShapeableImageView>(R.id.Banner)
         banner.setImageResource(R.drawable.bannermain)
         val progressBar = findViewById<ProgressBar>(R.id.progressBarBanner)
+        val progressBarCat = findViewById<ProgressBar>(R.id.progressBar2)
+        val progressBarProd = findViewById<ProgressBar>(R.id.progressBar3)
         progressBar.visibility = View.GONE
+        progressBarCat.visibility = View.VISIBLE
+        progressBarProd.visibility = View.VISIBLE
         val categoryRecycler = findViewById<RecyclerView>(R.id.recyclerViewCat)
-        categoryRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        categoryRecycler.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -40,22 +50,30 @@ class MainActivity : AppCompatActivity() {
         }
 
         recyclerView = findViewById(R.id.recyclerViewPop)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
 
         lifecycleScope.launch {
             try {
                 val products = repository.getAllProducts()
-                recyclerView.adapter = ProductAdapter(products)
+                recyclerView.adapter = ProductAdapter(products.toMutableList())
+                progressBarProd.visibility = View.GONE
             } catch (e: Exception) {
                 Log.e("PRODUCTS", "Erreur de chargement", e)
                 Toast.makeText(this@MainActivity, "Erreur lors du chargement", Toast.LENGTH_SHORT).show()
             }
             try {
-                val categories = repository.getCategories()
-                categoryRecycler.adapter = CategoryAdapter(categories)
+                val categoryModels = repository.getCategories()
+                    .mapIndexed { index, name -> CategoryModel(id = index, name = name) }
+                    .toMutableList()
+
+                categoryRecycler.adapter = CategoryAdapter(categoryModels) { selectedCategory ->
+                    //filterProducts(selectedCategory)
+                }
+                progressBarCat.visibility = View.GONE
             } catch (e: Exception) {
                 Toast.makeText(this@MainActivity, "Erreur chargement catégories", Toast.LENGTH_SHORT).show()
             }
         }
     }
+
 }
