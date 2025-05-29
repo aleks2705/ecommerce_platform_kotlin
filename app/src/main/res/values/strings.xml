@@ -22,4 +22,7 @@
     <string name="title">title</string>
     <string name="category">Category</string>
     <string name="produits">Produits</string>
+    <string name="titleProd">title</string>
+    <string name="priceTxt">$-</string>
+    <string name="retour">Retour</string>
 </resources>

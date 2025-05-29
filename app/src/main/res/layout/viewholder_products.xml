@@ -8,51 +8,56 @@
     android:background="@drawable/white_bg">
 
     <com.google.android.material.imageview.ShapeableImageView
-        app:shapeAppearanceOverlay="@style/CircleImageView"
         android:id="@+id/prodPic"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_margin="8dp"
         android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:clipToOutline="true"
+        app:layout_constraintBottom_toTopOf="@+id/titleProd" />
 
     <TextView
         android:id="@+id/titleProd"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
-        android:text="title"
-        android:singleLine="true"
+        android:text="@string/titleProd"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/prodPic"
-        app:layout_constraintTop_toBottomOf="@+id/prodPic" />
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintTop_toBottomOf="@+id/prodPic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/priceTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/priceTxt"
+        android:textColor="@color/darkBrown"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/plus" />
 
-    <TextView
-        android:id="@+id/priceTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="$-"
-        android:textColor="@color/darkBrown"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintStart_toStartOf="@+id/titleProd" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
