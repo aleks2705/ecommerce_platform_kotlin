@@ -4,7 +4,7 @@
     <string name="un_caf_qui_a_du_caract_re_ncomme_vous">Un café qui a du caractère.\nComme vous.</string>
     <string name="d_marrer">Démarrer</string>
     <string name="title_activity_login">LoginActivity</string>
-    <string name="prompt_email">Email</string>
+    <string name="prompt_email">Nom d'utilisateur</string>
     <string name="prompt_password">Mot de passe</string>
     <string name="action_sign_in">Connexion</string>
     <string name="action_sign_in_short">Connexion</string>
