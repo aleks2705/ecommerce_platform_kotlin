@@ -1,5 +1,6 @@
 package com.example.e_commerce.Activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -67,7 +68,9 @@ class MainActivity : AppCompatActivity() {
                     .toMutableList()
 
                 categoryRecycler.adapter = CategoryAdapter(categoryModels) { selectedCategory ->
-                    //filterProducts(selectedCategory)
+                    val intent = Intent(this@MainActivity, CategoryListActivity::class.java)
+                    intent.putExtra("category", selectedCategory.name)
+                    startActivity(intent)
                 }
                 progressBarCat.visibility = View.GONE
             } catch (e: Exception) {
