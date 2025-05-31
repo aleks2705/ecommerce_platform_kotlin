@@ -1,5 +1,7 @@
 package com.example.e_commerce.ui.products
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,10 +9,11 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.e_commerce.Activity.DetailActivity
 import com.example.e_commerce.R
 import com.example.e_commerce.models.ProductModel
 
-class CategoryProductAdapter(private val items: List<ProductModel>) :
+class CategoryProductAdapter(private val context: Context,private val items: List<ProductModel>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
@@ -41,6 +44,12 @@ class CategoryProductAdapter(private val items: List<ProductModel>) :
             holder.bind(item)
         } else if (holder is RightViewHolder) {
             holder.bind(item)
+        }
+
+        holder.itemView.setOnClickListener {
+            val intent=Intent(context, DetailActivity::class.java)
+            intent.putExtra("object", items[position])
+            context.startActivity(intent)
         }
     }
 
