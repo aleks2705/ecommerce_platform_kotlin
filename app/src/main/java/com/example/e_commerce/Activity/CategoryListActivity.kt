@@ -12,7 +12,6 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.e_commerce.Activity.DetailActivity
 import com.example.e_commerce.R
 import com.example.e_commerce.repository.MainRepository
 import com.example.e_commerce.ui.products.CategoryProductAdapter
@@ -30,7 +29,7 @@ class CategoryListActivity : AppCompatActivity() {
         }
 
         val category = intent.getStringExtra("category") ?: ""
-        val recyclerView = findViewById<RecyclerView>(R.id.ListView)
+        val recyclerView = findViewById<RecyclerView>(R.id.cartView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         lifecycleScope.launch {

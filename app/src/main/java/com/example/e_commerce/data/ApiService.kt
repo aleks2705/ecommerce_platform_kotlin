@@ -5,6 +5,7 @@ import com.example.e_commerce.data.model.LoginResponse
 import com.example.e_commerce.models.CartModel
 import com.example.e_commerce.models.CartPostModel
 import com.example.e_commerce.models.ProductModel
+import com.example.e_commerce.models.UserModel
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -26,8 +27,15 @@ interface ApiService {
     @GET("products/{id}")
     suspend fun getProductById(@Path("id") id: Int): ProductModel
 
+    @GET("carts")
+    suspend fun getAllCarts(): List<CartModel>
+
     @POST("carts")
     suspend fun addToCart(@Body cart: CartPostModel): CartModel
+
+    @GET("users")
+    suspend fun getAllUsers(): List<UserModel>
+
 
 }
 

@@ -22,6 +22,10 @@ class MainRepository {
         return RetrofitInstance.api.getProductById(id)
     }
 
+    suspend fun getAllCarts(): List<CartModel> {
+        return RetrofitInstance.api.getAllCarts()
+    }
+
     suspend fun addToCart(cart: CartPostModel): CartModel{
         return RetrofitInstance.api.addToCart(cart)
     }
