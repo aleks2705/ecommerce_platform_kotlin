@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -41,7 +42,21 @@ class MainActivity : AppCompatActivity() {
         val categoryRecycler = findViewById<RecyclerView>(R.id.recyclerViewCat)
         categoryRecycler.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-
+        val cartLayout = findViewById<LinearLayout>(R.id.cart_layout)
+        val mainLayout = findViewById<LinearLayout>(R.id.main_layout)
+        val profileLayout = findViewById<LinearLayout>(R.id.profile_layout)
+        profileLayout.setOnClickListener{
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+        mainLayout.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+        cartLayout.setOnClickListener {
+            val intent = Intent(this, CartActivity::class.java)
+            startActivity(intent)
+        }
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
