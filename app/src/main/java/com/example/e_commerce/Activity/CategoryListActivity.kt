@@ -36,7 +36,8 @@ class CategoryListActivity : AppCompatActivity() {
             try {
                 val allProducts = MainRepository().getAllProducts()
                 val filteredProducts = allProducts.filter { it.category == category }
-                recyclerView.adapter = CategoryProductAdapter(filteredProducts)
+                val adapter = CategoryProductAdapter(this@CategoryListActivity, filteredProducts)
+                recyclerView.adapter = adapter
             } catch (e: Exception) {
                 Log.e("CATEGORY", "Erreur chargement produits", e)
             }
